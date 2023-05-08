@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Contact Book | Pawan Kumavat</title>
+      <link rel="stylesheet" href="css/style.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+      <div class="wrapper">
+         <div class="title-text">
+            <div class="title login">
+               Contact Book
+            </div>
+         </div>
+         <div class="form-container">
+            <div class="slide-controls">
+               <input type="radio" name="slide" id="add-contact" checked>
+               <input type="radio" name="slide" id="search-contact">
+               <label for="add-contact" class="slide add-contact">Add</label>
+               <label for="search-contact" class="slide search-contact">Search</label>
+               <div class="slider-tab"></div>
+            </div>
+            <div id="displaynotify-1"></div>
+            <div class="form-inner">
+               <form action="#" class="add-contact">
+                  <div class="field">
+                     <input type="text" placeholder="Contact Name" id="name" required>
+                  </div>
+                  <div class="field">
+                     <input type="text" placeholder="Contact Number" id="number" maxlength="10" required>
+                  </div>
+                  <div class="field">
+                     <button class="btn" id="add">Add Contact</button>
+                  </div>
+               </form>
+               <form action="#" class="search-contact">
+                  <div class="field">
+                     <input type="text" placeholder="Contact Name" id="getContactName" required>
+                  </div>
+                  <div class="field">
+                     <button class="btn" id="get">Search</button>
+                  </div>
+                  <div class="display">  
+                     <div class="result">
+                        <p id="contact-name"></p>
+                        <p id="contact-number"></p>
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+      <script>
+         const addText = document.querySelector(".title-text .add-contact");
+         const addForm = document.querySelector("form.add-contact");
+         const addlabelBtn = document.querySelector("label.add-contact");
+         const searchlabelBtn = document.querySelector("label.search-contact");
+         
+         searchlabelBtn.onclick = (()=>{
+           addForm.style.marginLeft = "-50%";
+           let displayNotification = document.getElementById("displaynotify-1");
+           displayNotification.style.display = "none";
+         });
+         addlabelBtn.onclick = (()=>{
+           addForm.style.marginLeft = "0%";
+           let displayNotification = document.getElementById("displaynotify-1");
+            displayNotification.style.display = "none";
+         });
+      </script>
+      <script src="js/script.js"></script>
+   </body>
+</html>
